@@ -119,11 +119,12 @@ function transform(oldObject) {
 };
 
 let newPointStructure = transform(oldPointStructure);
+newPointStructure[" "] = 0;
 
 function runProgram() {
   const word = initialPrompt();
   const scorer = scorerPrompt();
-  console.log(`The score for '${word}': ${scorer.scorerFunction(word)}`)
+  console.log(`The score for '${word}' using the ${scorer.name} scoring algorithm: ${scorer.scorerFunction(word)}`)
 }
 
 module.exports = {
